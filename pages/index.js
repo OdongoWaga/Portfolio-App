@@ -1,15 +1,20 @@
-const Index = () => {
-    return (
-        <div>
+import Link from "next/link";
 
-        <h1> I am the Index Page </h1>
-        <a href="/"> Home</a>
-        <a href="/about">About</a>
-        <a href="/portfolios">Portfolios</a>
-        <a href="/blogs">Blog</a>
-        <a href="/cv">Cv</a>
-        </div>
+import React, { Component } from 'react'
+import Header from "../components/shared/Header";
+import BaseLayout from "../components/layouts/BaseLayout";
+
+class Index extends Component {
+  render() {
+    return (
+      <BaseLayout>
+          <h1>I am the index page </h1>
+        
+        
+      </BaseLayout>
     )
+  }
 }
+
 
 export default Index;
