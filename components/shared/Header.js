@@ -5,6 +5,7 @@ class Header extends Component {
   render() {
     return (
       <>
+        <p className='customClass'> I am  a stylish P</p>
       <Link href='/'>
         <a>Home </a>
         </Link>
@@ -17,6 +18,19 @@ class Header extends Component {
         <Link href='/cv'>
         <a>CV </a>
         </Link>
+
+        <style jsx>
+        {
+            `
+        a {
+            font-size: 20px;
+        };
+        .customClass{
+            color: red;
+        }
+        `
+        }
+        </style>
         
       </>
     )
