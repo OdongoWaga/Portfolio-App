@@ -2,11 +2,18 @@ import React from 'react'
 import Header from '../Header';
 
 const BaseLayout = (props) => {
+
+  const {className, children}= props;
   return (
-      <>
-      <Header/>
-    {props.children}
-    </>
+      <div className='layout-container'>
+      <Header />
+      <main className={`$(className)`}>
+      <div className='wrapper'>
+      {children}
+      </div>
+      </main>
+
+      </div>
   )
 }
 
