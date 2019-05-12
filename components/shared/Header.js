@@ -6,7 +6,6 @@ class Header extends Component {
   render() {
     return (
       <>
-        <p className='customClassFromFile'> I am  a stylish P</p>
       <Link href='/'>
         <a>Home </a>
         </Link>
