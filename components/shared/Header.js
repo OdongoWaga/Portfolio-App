@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import '../../styles/main.scss'
 
 class Header extends Component {
   render() {
     return (
       <>
-        <p className='customClass'> I am  a stylish P</p>
+        <p className='customClassFromFile'> I am  a stylish P</p>
       <Link href='/'>
         <a>Home </a>
         </Link>
@@ -20,12 +21,12 @@ class Header extends Component {
         </Link>
 
         <style jsx>
-        {
-            `
+        {`
         a {
-            font-size: 20px;
+            font-size: 50px;
+  
         };
-        .customClass{
+        .customClass {
             color: red;
         }
         `
