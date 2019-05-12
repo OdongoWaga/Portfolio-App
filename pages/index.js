@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import React, { Component } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import BaseLayout from "../components/layouts/BaseLayout";
 
