@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 import React, { Component } from 'react'
-import Header from "../components/shared/Header";
+import 'bootstrap/dist/css/bootstrap-grid.min';
+
 import BaseLayout from "../components/layouts/BaseLayout";
 
 class Index extends Component {
