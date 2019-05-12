@@ -19,19 +19,11 @@ class Header extends Component {
         <Link href='/cv'>
         <a>CV </a>
         </Link>
+        <Link href='/portfolios'>
+        <a>portfolios </a>
+        </Link>
 
-        <style jsx>
-        {`
-        a {
-            font-size: 50px;
-  
-        };
-        .customClass {
-            color: red;
-        }
-        `
-        }
-        </style>
+
         
       </>
     )
