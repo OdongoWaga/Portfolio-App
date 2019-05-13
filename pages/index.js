@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import React, { Component } from 'react';
-import {Button, Container, Row, Col} from 'reactstrap';
+import {Container, Row, Col} from 'reactstrap';
 
 
 import BaseLayout from "../components/layouts/BaseLayout";
@@ -22,12 +22,12 @@ class Index extends Component {
             <div className={`flipper`}>
               <div className="back">
                 <div className="hero-section-content">
-                  <h2> Developer </h2>
+                  <h2> Full Stack Web Developer </h2>
                   <div className="hero-section-content-intro">
                     Have a look at my portfolio and job history.
                   </div>
                 </div>
-                <img className="image" src="/static/images/background-1.jpg"/>
+                <img className="image" src="/static/images/4.3 section-1.png.png"/>
                 <div className="shadow-custom">
                   <div className="shadow-inner"> </div>
                 </div>
@@ -38,8 +38,7 @@ class Index extends Component {
         <Col md="6" className="hero-welcome-wrapper">
           <div className="hero-welcome-text">
             <h1>
-              Welcome to my website.
-              Get informed, collaborate and discover projects I was working on through the years!
+              Welcome 
             </h1>
           </div>
           <div className="hero-welcome-bio">
@@ -52,6 +51,7 @@ class Index extends Component {
     </Container>
   </div>
 </BaseLayout>
+
 
     )
   }
