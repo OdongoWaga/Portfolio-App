@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Header';
+import Header from '../shared/Header';
 
 const BaseLayout = (props) => {
   const { className, children } = props;

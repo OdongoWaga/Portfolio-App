@@ -7,13 +7,11 @@ import { Button, Container, Row, Col } from 'reactstrap';
 
 class Index extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-    this.roles = ['Developer', 'Tech Lover', 'Team Player', 'Course Creater', 'React.js', 'Angular'];
-  }
-
+  
+  
+  
   render() {
+    const roles =['Developer', 'Tech Writer', 'Python', 'React', 'React-Native', 'Flutter'];
 
     return (
       <BaseLayout className="cover">
@@ -52,7 +50,7 @@ class Index extends React.Component {
                   loop
                   typeSpeed={60}
                   backSpeed={60}
-                  strings={this.roles}
+                  strings={roles}
                   backDelay={1000}
                   loopCount={0}
                   showCursor
