@@ -30,6 +30,10 @@ class Auth0 {
   }
 }
 
+setSession = () =>{
+// Save tokens!
+}
+
 const auth0Client = new Auth0();
 
 export default auth0Client;
