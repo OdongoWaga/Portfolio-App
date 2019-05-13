@@ -1,17 +1,37 @@
-import React, { Component } from 'react'
+import React from 'react';
 import BaseLayout from '../components/layouts/BaseLayout';
+import { withRouter } from 'next/router'
+import axios from 'axios';
 
-export default class Portfolio extends Component {
+class Portfolio extends React.Component {
+
+  static async getInitialProps({query}) {
+    const portfolioId = query.id;
+    let portfolio = {};
+
+    try {
+      const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${portfolioId}`);
+      portfolio = response.data;
+
+    } catch(err) {
+      console.error(err);
+    }
+
+    return {portfolio};
+  }
+
   render() {
+    const { portfolio } = this.props;
+
     return (
-      <div>
-          <BaseLayout>
-        <Link href='/portfolio'>
-        <a>Portfolio </a>
-        </Link>
-        <h1>I am a portfolio page</h1>
-          </BaseLayout>
-      </div>
+      <BaseLayout>
+        <h1> {portfolio.title} </h1>
+        <p> BODY: {portfolio.body} </p>
+        <p> ID:  {portfolio.id} </p>
+
+      </BaseLayout>
     )
   }
 }
+
+export default withRouter(Portfolio);

@@ -1,20 +1,19 @@
-import React from 'react'
+import React from 'react';
 import Header from '../Header';
 
 const BaseLayout = (props) => {
+  const { className, children } = props;
 
-  const {className, children}= props;
   return (
-      <div className='layout-container'>
+    <div className="layout-container" >
       <Header />
-      <main className={`$(className)`}>
-      <div className='wrapper'>
-      {children}
-      </div>
+      <main className={`cover ${className}`}>
+        <div className="wrapper">
+          {children}
+        </div>
       </main>
-
-      </div>
+    </div>
   )
 }
 
-export default BaseLayout
+export default BaseLayout;

@@ -1,26 +1,25 @@
-const { createServer } = require('http');
-const { parse } = require('url');
+const express = require('express');
 const next = require('next');
+const routes = require('./routes');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
-const handle = app.getRequestHandler();
+const handle = routes.getRequestHandler(app);
 
-app.prepare().then(() => {
-  createServer((req, res) => {
+app.prepare()
+.then(() => {
+  const server = express();
 
-    const parsedUrl = parse(req.url, true);
-    const { pathname, query } = parsedUrl;
+  server.get('*', (req, res) => {
+    return handle(req, res)
+  })
 
-    if (pathname === '/a') {
-      app.render(req, res, '/b', query);
-    } else if (pathname === '/b') {
-      app.render(req, res, '/a', query);
-    } else {
-      handle(req, res, parsedUrl);
-    }``
-  }).listen(3000, err => {
-    if (err) throw err;
-    console.log('> Ready on http://localhost:3000');
-  });
+  server.use(handle).listen(3000, (err) => {
+    if (err) throw err
+    console.log('> Ready on http://localhost:3000')
+  })
+})
+.catch((ex) => {
+  console.error(ex.stack)
+  process.exit(1)
 })
