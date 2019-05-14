@@ -46,7 +46,7 @@ export default class Header extends React.Component {
 
   render() {
 
-    //const { isAuthenticated, user } = this.props;
+    const { isAuthenticated, user } = this.props;
 
     return (
       <div>
@@ -70,7 +70,7 @@ export default class Header extends React.Component {
               <NavItem className="port-navbar-item">
                 <BsNavLink route="/cv" title="Cv" />
               </NavItem>
-              {/* { !isAuthenticated &&
+               { !isAuthenticated &&
                 <NavItem className="port-navbar-item">
                   <Login />
                 </NavItem>
@@ -79,7 +79,7 @@ export default class Header extends React.Component {
                 <NavItem className="port-navbar-item">
                   <Logout />
                 </NavItem>
-              } */}
+              } 
             </Nav>
           </Collapse>
         </Navbar>
