@@ -47,7 +47,7 @@ class Auth0 {
 
     this.auth0.logout({
       returnTo: '',
-      clientID: 'NfvS9nw81ItncHJKPHCaAvwD9ChNWYn3'
+      clientID: 'agMjB6XhqDZNZQK8zPEg0lZVBWtMWnDh'
     })
   }
 

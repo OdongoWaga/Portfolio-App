@@ -14,7 +14,7 @@ class Index extends React.Component {
     const roles =['Developer', 'Tech Writer', 'Python', 'React', 'React-Native', 'Flutter'];
 
     return (
-      <BaseLayout className="cover">
+      <BaseLayout className="cover" {...this.props.auth}>
         <div className="main-section">
           <div className="background-image">
             <img src="/static/images/4.2 background-index.png" />
