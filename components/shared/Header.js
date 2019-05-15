@@ -18,7 +18,7 @@ const BsNavLink = (props) => {
     <Link href={route}>
       <a className="nav-link port-navbar-link"> {title} </a>
     </Link>
-  ) 
+  )
 }
 
 const Login = () => {
@@ -34,11 +34,15 @@ const Logout = () => {
 }
 
 export default class Header extends React.Component {
-  state = {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
       isOpen: false
     };
-  
-  toggle = ()=>  {
+  }
+  toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
@@ -70,7 +74,7 @@ export default class Header extends React.Component {
               <NavItem className="port-navbar-item">
                 <BsNavLink route="/cv" title="Cv" />
               </NavItem>
-               { !isAuthenticated &&
+              { !isAuthenticated &&
                 <NavItem className="port-navbar-item">
                   <Login />
                 </NavItem>
@@ -79,7 +83,7 @@ export default class Header extends React.Component {
                 <NavItem className="port-navbar-item">
                   <Logout />
                 </NavItem>
-              } 
+              }
             </Nav>
           </Collapse>
         </Navbar>

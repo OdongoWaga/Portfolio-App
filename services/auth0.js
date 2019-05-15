@@ -3,19 +3,25 @@ import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
 
+import { getCookieFromReq } from '../helpers/utils';
+
 class Auth0 {
 
-    constructor() {
-  this.auth0 = new auth0.WebAuth({
-    domain: 'dev-906wbxlt.auth0.com',
-    clientID: 'agMjB6XhqDZNZQK8zPEg0lZVBWtMWnDh',
-    redirectUri: 'http://localhost:3000/callback',
-    responseType: 'token id_token',
-    scope: 'openid profile'
-  });
-}
+  constructor() {
+    this.auth0 = new auth0.WebAuth({
+      domain: 'dev-906wbxlt.auth0.com',
+      clientID: 'agMjB6XhqDZNZQK8zPEg0lZVBWtMWnDh',
+      redirectUri: 'http://localhost:3000/callback',
+      responseType: 'token id_token',
+      scope: 'openid profile'
+    });
 
-  handleAuthentication =()=> {
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
+    this.handleAuthentication = this.handleAuthentication.bind(this);
+  }
+
+  handleAuthentication() {
     return new Promise((resolve, reject) => {
       this.auth0.parseHash((err, authResult) => {
         if (authResult && authResult.accessToken && authResult.idToken) {
@@ -29,7 +35,7 @@ class Auth0 {
     })
   }
 
-   setSession =(authResult) => {
+   setSession(authResult) {
     // Set the time that the Access Token will expire at
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
 
@@ -40,23 +46,23 @@ class Auth0 {
     Cookies.set('expiresAt', expiresAt);
   }
 
-  logout =()=> {
+  logout() {
     Cookies.remove('user');
     Cookies.remove('jwt');
     Cookies.remove('expiresAt');
 
     this.auth0.logout({
       returnTo: '',
-      clientID: 'agMjB6XhqDZNZQK8zPEg0lZVBWtMWnDh'
+      clientID: 'NfvS9nw81ItncHJKPHCaAvwD9ChNWYn3'
     })
   }
 
-  login =()=> {
+  login() {
     this.auth0.authorize();
   }
 
   async getJWKS() {
-    const res = await axios.get('https://dev-906wbxlt.auth0.com.well-known/jwks.json');
+    const res = await axios.get('https://dev-906wbxlt.auth0.com/.well-known/jwks.json');
     const jwks = res.data;
     return jwks;
   }
