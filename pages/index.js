@@ -7,17 +7,20 @@ import { Button, Container, Row, Col } from 'reactstrap';
 
 class Index extends React.Component {
 
-  
-  
-  
+  constructor(props) {
+    super(props);
+
+    this.roles = ['Developer', 'Tech Lover', 'Team Player', 'Course Creater', 'React.js', 'Angular'];
+  }
+
   render() {
-    const roles =['Developer', 'Tech Writer', 'Python', 'React', 'React-Native', 'Flutter'];
+    const { isAuthenticated, user } = this.props.auth;
 
     return (
-      <BaseLayout className="cover" {...this.props.auth}>
+      <BaseLayout className="cover" {...this.props.auth} headerType="index">
         <div className="main-section">
           <div className="background-image">
-            <img src="/static/images/4.2 background-index.png" />
+            <img src="/static/images/background-index.png" />
           </div>
           <Container>
             <Row>
@@ -31,7 +34,7 @@ class Index extends React.Component {
                           Have a look at my portfolio and job history.
                         </div>
                       </div>
-                      <img className="image" src="/static/images/4.3 section-1.png.png"/>
+                      <img className="image" src="/static/images/section-1.png"/>
                       <div className="shadow-custom">
                         <div className="shadow-inner"> </div>
                       </div>
@@ -42,7 +45,8 @@ class Index extends React.Component {
               <Col md="6" className="hero-welcome-wrapper">
                 <div className="hero-welcome-text">
                   <h1>
-                    Welcome to the portfolio website of Waga.
+                    { isAuthenticated && <span> <b> {user.name} </b> </span> }
+                    Welcome to the portfolio website of Filip Jerga.
                     Get informed, collaborate and discover projects I was working on through the years!
                   </h1>
                 </div>
@@ -50,7 +54,7 @@ class Index extends React.Component {
                   loop
                   typeSpeed={60}
                   backSpeed={60}
-                  strings={roles}
+                  strings={this.roles}
                   backDelay={1000}
                   loopCount={0}
                   showCursor
