@@ -10,11 +10,11 @@ class Owner extends React.Component {
     return (
       <BaseLayout {...this.props.auth}>
         <BasePage>
-          <h1> I am Owner Page </h1>
+          <h1> My Page </h1>
         </BasePage>
       </BaseLayout>
     )
   }
 }
 
-export default withAuth('siteOwner')(Owner);
+export default withAuth('siteOwner')(Owner); 

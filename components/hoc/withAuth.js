@@ -16,7 +16,7 @@ export default role => Component =>
   renderProtectedPage() {
     const { isAuthenticated, user } = this.props.auth;
     const userRole = user && user[`${namespace}role`];
-    let isAuthorized = false;s
+    let isAuthorized = false;
 
     if (role) {
       if (userRole && userRole === role) { isAuthorized = true };
