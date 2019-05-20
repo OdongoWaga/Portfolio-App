@@ -14,7 +14,7 @@ class Index extends React.Component {
       isFlipping: false
     }
 
-    this.roles = ['Developer', 'Tech Writer', 'React', 'React Native', 'Flutter', 'Python', 'Django', 'Android'];
+    this.roles = ['Web Developer', 'Mobile Developer', 'React', 'React Native', 'Graphql', 'Flutter', 'Python', 'Gatsby', 'Android'];
   }
 
   componentDidMount() {
