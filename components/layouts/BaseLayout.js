@@ -10,13 +10,13 @@ const BaseLayout = (props) => {
     <React.Fragment>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="My name is Filip Jerga and I am an experienced software engineer and freelance developer. I have a Master's degree in Artificial Intelligence and several years of experience working on a wide range of technologies and projects from C++ development for ultrasound devices to modern mobile and web applications in React and Angular. Throughout my career, I have acquired advanced technical knowledge and the ability to explain programming topics clearly and in detail to a broad audience. I invite you to take my course, where I have put a lot of effort to explain web and software engineering concepts in a detailed, hands-on and understandable way." />
-        <meta name="keywords" content="jerga portfolio, jerga developer, jerga freelancig, jerga programming"/>
-        <meta property="og:title" content="Filip Jerga - programmer, developer, bloger" />
+        <meta name="description" content="My name is Waga Odongo and I am a software engineer and freelance developer. I have a bachelor degree in Mathematics and two years experience working on a wide range of technologies and projects.  I have acquired advanced technical knowledge and the ability to explain programming topics clearly and in detail to a broad audience. I write about the technologies I use for a wide audience" />
+        <meta name="keywords" content="waga portfolio, waga developer, waga freelancing, waga programming"/>
+        <meta property="og:title" content="Waga Odongo - programmer, developer, writer" />
         <meta property="og:locale" content="en_EU" />
         <meta property="og:url" content="http://localhost:3000"/>
         <meta property="og:type" content="website"/>
-        <meta property="og:description" content="My name is Filip Jerga and I am an experienced software engineer and freelance developer."/>
+        <meta property="og:description" content="My name is Waga Odongo and I am an experienced software engineer and freelance developer."/>
 
         {cannonical && <link rel="cannonical" href={`http://localhost:3000${cannonical}`}/>}
         <link rel="icon" type="image/ico" href="/static/favicon.ico"/>

@@ -11,7 +11,7 @@ class Auth0 {
     this.auth0 = new auth0.WebAuth({
       domain: 'dev-906wbxlt.auth0.com',
       clientID: 'agMjB6XhqDZNZQK8zPEg0lZVBWtMWnDh',
-      redirectUri: 'http://localhost:3000/callback',
+      redirectUri: `${process.env.BASE_URL}/callback`,
       responseType: 'token id_token',
       scope: 'openid profile'
     });
