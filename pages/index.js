@@ -14,7 +14,7 @@ class Index extends React.Component {
       isFlipping: false
     }
 
-    this.roles = ['Developer', 'Tech Lover', 'Team Player', 'Course Creater', 'React.js', 'Angular'];
+    this.roles = ['Developer', 'Tech Writer', 'React', 'React Native', 'Flutter', 'Python', 'Django', 'Android'];
   }
 
   componentDidMount() {
@@ -30,7 +30,7 @@ class Index extends React.Component {
       this.setState({
         isFlipping: !this.state.isFlipping
       });
-    }, 60000);
+    }, 3000);
   }
 
 
@@ -59,7 +59,7 @@ class Index extends React.Component {
                           Have a look at my portfolio and job history.
                         </div>
                       </div>
-                      <img alt="Guy programming welcome picture" className="image" src="/static/images/section-1.png"/>
+                      <img alt="Guy programming welcome picture" className="image" src="/static/images/section-1.png.png"/>
                       <div className="shadow-custom">
                         <div className="shadow-inner"> </div>
                       </div>
@@ -108,6 +108,9 @@ class Index extends React.Component {
               </Col>
             </Row>
           </Container>
+          <span className="service-link">Vector illustration credit:{' '}
+            <a href="https://www.Vecteezy.com/">vecteezy.com</a>
+          </span>
         </div>
       </BaseLayout>
     )
