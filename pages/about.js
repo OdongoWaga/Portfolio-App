@@ -22,7 +22,7 @@ class About extends React.Component {
               <div className="fadein">
                 <p>My name is Waga Odongo and I am an experienced software engineer and freelance developer. </p>
                 <p>
-                i have a maths degree and specialise in web and mobile technologies
+                I have a maths degree and specialise in web and mobile technologies
                 </p>
                 <p>
                 Have a look at some of my projects
